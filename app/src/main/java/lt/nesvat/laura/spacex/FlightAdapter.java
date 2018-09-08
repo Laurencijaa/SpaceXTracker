@@ -1,6 +1,8 @@
 package lt.nesvat.laura.spacex;
 
 import android.app.Activity;
+import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +40,11 @@ public class FlightAdapter extends ArrayAdapter {
         }else {
             launchSuccessTextView.setText(currentFlight.isLaunchSuccess());
             launchSuccessTextView.setVisibility(View.VISIBLE);
+            if (currentFlight.getLaunchSuccessState()) {
+                launchSuccessTextView.setTextColor(ContextCompat.getColor(this.getContext(), R.color.launchSuccess));
+            } else {
+                launchSuccessTextView.setTextColor(ContextCompat.getColor(this.getContext(), R.color.launchFail));
+            }
         }
         return listItemView;
 

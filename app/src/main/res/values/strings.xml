@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">SpaceX</string>
     <string name="button_history">History</string>
+    <string name="main_label">SpaceX future launches</string>
+    <string name="history_label">SpaceX past launches</string>
+    <string name="detail_label">Launch details</string>
 </resources>

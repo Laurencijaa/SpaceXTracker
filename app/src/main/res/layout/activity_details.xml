@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/main_margin"
+    android:background="@color/colorPrimaryLight"
+    tools:context=".DetailsActivity">
+
+    <TextView
+        android:id="@+id/date_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:textColor="@color/colorPrimaryDark"
+        tools:text="2018 Aug 07"/>
+
+    <TextView
+        android:id="@+id/flight_number_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:textColor="@color/colorPrimaryDark"
+        tools:text="Flight number: 67"/>
+
+    <TextView
+        android:id="@+id/rocket_name_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:textColor="@color/colorPrimaryDark"
+        tools:text="Falcon 9"/>
+
+    <TextView
+        android:id="@+id/launch_site_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:textColor="@color/colorPrimaryDark"
+        tools:text="Launch site: Cape Canaveral Air Force Station Space Launch Complex 40"/>
+
+    <TextView
+        android:id="@+id/launch_success_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:textColor="@color/colorPrimaryDark"
+        tools:text="Launch Success"/>
+
+    <TextView
+        android:id="@+id/reuse_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:textColor="@color/colorPrimaryDark"
+        tools:text="Reuse: YES"/>
+
+    <TextView
+        android:id="@+id/details_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:textColor="@color/colorPrimaryDark"
+        tools:text="Details: Indonesian comsat intended to replace the aging Telkom 1 at 108° E. First reflight of a Block 5-version booster."/>
+
+    <TextView
+        android:id="@+id/video_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:autoLink="web"
+        tools:text="https://www.youtube.com/watch?v=FjfQNBYv2IY"/>
+
+</LinearLayout>

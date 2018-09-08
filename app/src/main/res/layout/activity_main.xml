@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/main_margin"
+    android:padding="@dimen/main_margin"
+    android:background="@color/colorPrimaryLight"
     tools:context=".MainActivity">
 
     <ImageView
@@ -23,6 +24,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginRight="@dimen/main_margin"
+        android:background="@color/colorPrimary"
+        android:textColor="#FFF"
         android:text="@string/button_history" />
     
     <ListView

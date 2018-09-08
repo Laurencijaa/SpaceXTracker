@@ -1,11 +1,12 @@
 package lt.nesvat.laura.spacex;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-public class Flight {
+public class Flight implements Serializable{
 
     private int flightDateUnix;
     private int flightNumber;
@@ -29,25 +30,12 @@ public class Flight {
         this.isUpcoming = isUpcoming;
     }
 
-    public Flight(int flightDateUnix, String rocketName, boolean isUpcoming) {
-        this.flightDateUnix = flightDateUnix;
-        this.rocketName = rocketName;
-        this.isUpcoming = isUpcoming;
-    }
-
-    public Flight(int flightDateUnix, String rocketName, boolean launchSuccess, boolean isUpcoming) {
-        this.flightDateUnix = flightDateUnix;
-        this.rocketName = rocketName;
-        this.launchSuccess = launchSuccess;
-        this.isUpcoming = isUpcoming;
-    }
-
     public int getFlightDateUnix() {
         return flightDateUnix;
     }
 
-    public int getFlightNumber() {
-        return flightNumber;
+    public String getFlightNumber() {
+        return "Flight number: " + flightNumber;
     }
 
     public String getRocketName() {
@@ -58,7 +46,6 @@ public class Flight {
         return launchSiteName;
     }
 
-    //Todo: in case launch success, text should be green, otherwise red
     public String isLaunchSuccess() {
         if(launchSuccess) {
             return "Launch Success";
@@ -68,8 +55,16 @@ public class Flight {
 
     }
 
-    public boolean isReuse() {
-        return reuse;
+    public boolean getLaunchSuccessState(){
+        return launchSuccess;
+    }
+
+    public String isReuse() {
+        if(reuse){
+            return "Reuse: YES";
+        } else {
+            return "Reuse: NO";
+        }
     }
 
     public String getFlightDetails() {

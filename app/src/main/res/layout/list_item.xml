@@ -10,18 +10,21 @@
         android:id="@+id/date_text_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:textColor="@color/colorPrimaryDark"
         tools:text="2018 08 10 16:30"/>
 
     <TextView
         android:id="@+id/rocket_name_text_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:textColor="@color/colorPrimaryDark"
         tools:text="Falcon 9"/>
 
     <TextView
         android:id="@+id/launch_success_text_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:textColor="@color/colorPrimaryDark"
         tools:text="success"/>
 
 

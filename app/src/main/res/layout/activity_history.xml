@@ -4,7 +4,8 @@
     android:id="@+id/list_history"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="@dimen/main_margin"
+    android:padding="@dimen/main_margin"
     android:orientation="vertical"
+    android:background="@color/colorPrimaryLight"
     tools:context=".History">
 </ListView>
