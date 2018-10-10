@@ -42,7 +42,12 @@ public class DetailsActivity extends AppCompatActivity {
         reuse.setText(flight.isReuse());
 
         TextView details = findViewById(R.id.details_text_view);
-        details.setText(flight.getFlightDetails());
+        if(flight.isUpcoming()) {
+            details.setVisibility(View.GONE);
+        }else {
+            details.setText(flight.getFlightDetails());
+            details.setVisibility(View.VISIBLE);
+        }
 
         TextView video = findViewById(R.id.video_text_view);
         if(flight.isUpcoming()) {
