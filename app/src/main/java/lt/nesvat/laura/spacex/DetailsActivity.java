@@ -3,6 +3,7 @@ package lt.nesvat.laura.spacex;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -57,4 +58,8 @@ public class DetailsActivity extends AppCompatActivity {
             video.setVisibility(View.VISIBLE);
         }
     }
+
 }
+
+//todo: Add back arrow
+//Todo: Details returns null if empty, fix that

@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class History extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<Flight>> {
 
@@ -26,10 +27,11 @@ public class History extends AppCompatActivity implements LoaderManager.LoaderCa
     private TextView noFlightsTextView;
     private ProgressBar progressBar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_history);
 
         //Find TextView responsible for showing no data information
         noFlightsTextView = findViewById(R.id.empty_view);
@@ -52,7 +54,7 @@ public class History extends AppCompatActivity implements LoaderManager.LoaderCa
         }
 
         //Find reference to the ListView in the layout
-        ListView listview = (ListView) findViewById(R.id.list);
+        ListView listview = (ListView) findViewById(R.id.list_history);
         //MakeSure that in case no data is available user will be informed
         listview.setEmptyView(noFlightsTextView);
 
@@ -69,17 +71,6 @@ public class History extends AppCompatActivity implements LoaderManager.LoaderCa
                 Intent detailsIntent = new Intent(History.this, DetailsActivity.class);
                 detailsIntent.putExtra("FlightObject", currentFlight);
                 History.this.startActivity(detailsIntent);
-            }
-        });
-
-
-        Button historyButton = (Button) findViewById(R.id.button_history);
-        historyButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), History.class);
-                view.getContext().startActivity(intent);
-
             }
         });
 
@@ -113,3 +104,5 @@ public class History extends AppCompatActivity implements LoaderManager.LoaderCa
         flightAdapter.clear();
     }
 }
+
+//Todo: Sort history launches from latest to earliest

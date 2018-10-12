@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<Flight>> {
 
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     private FlightAdapter flightAdapter;
     private TextView noFlightsTextView;
     private ProgressBar progressBar;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,3 +117,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 }
 
 //Todo:Store all Strings in the String resource
+//Todo: make cat meow
+//Todo: Fix landscape mode
+//Todo: When app is inslalled it should appear on desktop
+//Todo: Make nice icon for the app
+//Todo: Make youtube link more readable
