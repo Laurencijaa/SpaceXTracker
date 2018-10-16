@@ -17,7 +17,6 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<Flight>> {
 
@@ -32,6 +31,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //So that the name next to icon is different than activity label
+        this.setTitle(getResources().getString(R.string.main_label));
 
         //Find TextView responsible for showing no data information
         noFlightsTextView = findViewById(R.id.empty_view);
@@ -114,11 +116,11 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public void onLoaderReset(Loader<List<Flight>> loader) {
         flightAdapter.clear();
     }
+
 }
 
 //Todo:Store all Strings in the String resource
 //Todo: make cat meow
 //Todo: Fix landscape mode
-//Todo: When app is inslalled it should appear on desktop
-//Todo: Make nice icon for the app
+//Todo: When app is inslalled it should appear on desktop - https://stackoverflow.com/questions/16873256/how-to-add-shortcut-to-home-screen-in-android-programmatically
 //Todo: Make youtube link more readable
