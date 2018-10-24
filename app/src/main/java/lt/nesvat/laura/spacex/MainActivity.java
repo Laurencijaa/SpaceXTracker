@@ -200,7 +200,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
 }
 
-//Todo: make cat meow
 //Todo: Fix landscape mode
 //Todo: When app is inslalled it should appear on desktop - https://stackoverflow.com/questions/16873256/how-to-add-shortcut-to-home-screen-in-android-programmatically
 //Todo: Make youtube link more readable
