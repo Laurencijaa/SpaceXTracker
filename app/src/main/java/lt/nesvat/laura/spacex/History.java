@@ -10,14 +10,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 public class History extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<Flight>> {
 
@@ -41,20 +39,23 @@ public class History extends AppCompatActivity implements LoaderManager.LoaderCa
 
         //Check for internet connection before initializing loader
         ConnectivityManager cm =(ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-        boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
 
-        //Update Loader
-        if(isConnected){
-            loaderManager.initLoader(FLIGHT_LOADER_ID, null, this);
-        } else {
-            progressBar = (ProgressBar) findViewById(R.id.progress_bar);
-            progressBar.setVisibility(View.GONE);
-            noFlightsTextView.setText("No Internet Connection");
+        if(cm != null) {
+            NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+            boolean isConnected = activeNetwork != null && activeNetwork.isConnectedOrConnecting();
+
+            //Update Loader
+            if (isConnected) {
+                loaderManager.initLoader(FLIGHT_LOADER_ID, null, this);
+            } else {
+                progressBar = findViewById(R.id.progress_bar);
+                progressBar.setVisibility(View.GONE);
+                noFlightsTextView.setText(R.string.no_internet);
+            }
         }
 
         //Find reference to the ListView in the layout
-        ListView listview = (ListView) findViewById(R.id.list_history);
+        ListView listview = findViewById(R.id.list_history);
         //MakeSure that in case no data is available user will be informed
         listview.setEmptyView(noFlightsTextView);
 
@@ -67,7 +68,7 @@ public class History extends AppCompatActivity implements LoaderManager.LoaderCa
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 //Find current Flight that was clicked
-                Flight currentFlight = (Flight) flightAdapter.getItem(position);
+                Flight currentFlight = flightAdapter.getItem(position);
                 Intent detailsIntent = new Intent(History.this, DetailsActivity.class);
                 detailsIntent.putExtra("FlightObject", currentFlight);
                 History.this.startActivity(detailsIntent);
@@ -86,9 +87,9 @@ public class History extends AppCompatActivity implements LoaderManager.LoaderCa
     @Override
     public void onLoadFinished(Loader<List<Flight>> loader, List<Flight> flights) {
 
-        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        progressBar = findViewById(R.id.progress_bar);
         progressBar.setVisibility(View.GONE);
-        noFlightsTextView.setText("No flights found");
+        noFlightsTextView.setText(String.valueOf(R.string.no_flights));
 
         //Clear adapter if there is previous flight data
         flightAdapter.clear();

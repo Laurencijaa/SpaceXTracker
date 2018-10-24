@@ -4,4 +4,6 @@
     <string name="main_label">SpaceX future launches</string>
     <string name="history_label">SpaceX past launches</string>
     <string name="detail_label">Launch details</string>
+    <string name="no_internet">No Internet Connection</string>
+    <string name="no_flights">No Flights Found</string>
 </resources>

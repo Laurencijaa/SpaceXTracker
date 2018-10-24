@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-public class Flight implements Serializable{
+class Flight implements Serializable{
 
     private int flightDateUnix;
     private int flightNumber;
@@ -18,7 +18,7 @@ public class Flight implements Serializable{
     private boolean launchSuccess;
     private boolean isUpcoming;
 
-    public Flight(int flightDateUnix, int flightNumber, String rocketName, String launchSiteName, boolean launchSuccess, boolean reuse, String flightDetails, String videoUrl, boolean isUpcoming) {
+    Flight(int flightDateUnix, int flightNumber, String rocketName, String launchSiteName, boolean launchSuccess, boolean reuse, String flightDetails, String videoUrl, boolean isUpcoming) {
         this.flightDateUnix = flightDateUnix;
         this.flightNumber = flightNumber;
         this.rocketName = rocketName;
@@ -30,56 +30,56 @@ public class Flight implements Serializable{
         this.isUpcoming = isUpcoming;
     }
 
-    public int getFlightDateUnix() {
+    int getFlightDateUnix() {
         return flightDateUnix;
     }
 
-    public String getFlightNumber() {
-        return "Flight number: " + flightNumber;
+    String getFlightNumber() {
+        return "Flight Number: " + flightNumber;
     }
 
-    public String getRocketName() {
+    String getRocketName() {
         return rocketName;
     }
 
-    public String getLaunchSiteName() {
+    String getLaunchSiteName() {
         return launchSiteName;
     }
 
-    public String isLaunchSuccess() {
+    String isLaunchSuccess() {
         if(launchSuccess) {
-            return "Launch Success";
+            return "Launch Success!";
         } else {
             return "Launch Failed";
         }
 
     }
 
-    public boolean getLaunchSuccessState(){
+    boolean getLaunchSuccessState(){
         return launchSuccess;
     }
 
-    public String isReuse() {
+    String isReuse() {
         if(reuse){
-            return "Reuse: YES";
+            return "Reuse YES";
         } else {
-            return "Reuse: NO";
+            return "Reuse NO";
         }
     }
 
-    public String getFlightDetails() {
+    String getFlightDetails() {
         return flightDetails;
     }
 
-    public String getVideoUrl() {
+    String getVideoUrl() {
         return videoUrl;
     }
 
-    public boolean isUpcoming() {
+    boolean isUpcoming() {
         return isUpcoming;
     }
 
-    public String getLocalDate(int flightDateUnix) {
+    String getLocalDate(int flightDateUnix) {
         //Convert timestamp to date
         Date date = new Date ();
         date.setTime((long) flightDateUnix*1000);

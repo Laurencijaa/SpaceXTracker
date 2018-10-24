@@ -9,7 +9,7 @@ import java.util.List;
 public class SpaceXLoader extends AsyncTaskLoader <List<Flight>> {
     private String mUrl;
 
-    public SpaceXLoader(Context context, String mUrl) {
+    SpaceXLoader(Context context, String mUrl) {
         super(context);
         this.mUrl = mUrl;
     }
@@ -22,8 +22,7 @@ public class SpaceXLoader extends AsyncTaskLoader <List<Flight>> {
         }
 
         //Read JSON response and return list of flights
-        final List<Flight> flights = QueryUtils.extractFlights(mUrl);
-        return flights;
+        return QueryUtils.extractFlights(mUrl);
     }
 
     //Triggering loadInBackground method to execute

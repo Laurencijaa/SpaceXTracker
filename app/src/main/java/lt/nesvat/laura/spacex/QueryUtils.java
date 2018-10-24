@@ -23,7 +23,7 @@ class QueryUtils {
     private static final String LOG_TAG = "QueryUtils class issue";
 
     //Creating URL from String
-    public static URL createUrl(String stringUrl) {
+    private static URL createUrl(String stringUrl) {
         URL url = null;
         try {
             url = new URL(stringUrl);
@@ -141,7 +141,7 @@ class QueryUtils {
     }
 
     //Method that ties all above methods together
-    public static List<Flight> extractFlights(String requestUrl) {
+    static List<Flight> extractFlights(String requestUrl) {
         //Generate URL from String using Utils helper method
         URL url = QueryUtils.createUrl(requestUrl);
         // Perform HTTP request to the URL and receive a JSON response back
@@ -152,8 +152,7 @@ class QueryUtils {
             Log.e(LOG_TAG, "Error closing input stream", e);
         }
         // Extract relevant fields from the JSON response and create and populate flights array with flight objects
-        List<Flight> flights = extractFeatureFromJson(jsonResponse);
-        return flights;
+        return extractFeatureFromJson(jsonResponse);
 
     }
 }
