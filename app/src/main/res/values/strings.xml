@@ -6,4 +6,6 @@
     <string name="detail_label">Launch details</string>
     <string name="no_internet">No Internet Connection</string>
     <string name="no_flights">No Flights Found</string>
+    <string name="play_video">Will play referenced youtube video of specific SpaceX launch</string>
+    <string name="link_to_video">Link to video:</string>
 </resources>

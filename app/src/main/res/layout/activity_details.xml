@@ -65,12 +65,21 @@
         tools:text="Details: Indonesian comsat intended to replace the aging Telkom 1 at 108° E. First reflight of a Block 5-version booster."/>
 
     <TextView
-        android:id="@+id/video_text_view"
+        android:id="@+id/video_info"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="8dp"
         android:textColor="@color/colorPrimaryDark"
-        android:autoLink="web"
-        tools:text="https://www.youtube.com/watch?v=FjfQNBYv2IY"/>
+        android:text="@string/link_to_video"
+        tools:text="Link to video"/>
+
+    <ImageButton
+        android:id="@+id/video_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/play_video"
+        android:paddingBottom="8dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/play" />
 
 </LinearLayout>

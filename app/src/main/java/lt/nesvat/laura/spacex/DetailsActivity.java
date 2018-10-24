@@ -1,9 +1,11 @@
 package lt.nesvat.laura.spacex;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class DetailsActivity extends AppCompatActivity {
@@ -14,7 +16,7 @@ public class DetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_details);
 
         Intent i = getIntent();
-        Flight flight = (Flight) i.getSerializableExtra("FlightObject");
+        final Flight flight = (Flight) i.getSerializableExtra("FlightObject");
 
         TextView date = findViewById(R.id.date_text_view);
         date.setText(flight.getLocalDate(flight.getFlightDateUnix()));
@@ -47,12 +49,17 @@ public class DetailsActivity extends AppCompatActivity {
             details.setVisibility(View.VISIBLE);
         }
 
-        TextView video = findViewById(R.id.video_text_view);
+        ImageButton video = findViewById(R.id.video_button);
         if(flight.isUpcoming()) {
             video.setVisibility(View.GONE);
         }else {
-            video.setText(flight.getVideoUrl());
             video.setVisibility(View.VISIBLE);
+            video.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(flight.getVideoUrl())));
+                }
+            });
         }
     }
 
