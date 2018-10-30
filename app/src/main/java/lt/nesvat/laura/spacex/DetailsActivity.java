@@ -49,6 +49,11 @@ public class DetailsActivity extends AppCompatActivity {
             details.setVisibility(View.VISIBLE);
         }
 
+        TextView videoText = findViewById(R.id.video_info);
+        if(flight.isUpcoming()) {
+            videoText.setVisibility((View.GONE));
+        }
+
         ImageButton video = findViewById(R.id.video_button);
         if(flight.isUpcoming()) {
             video.setVisibility(View.GONE);
