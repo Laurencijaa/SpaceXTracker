@@ -19,7 +19,7 @@ import java.util.List;
 
 public class History extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<Flight>> {
 
-    private static final String SPACEX_URL_PAST = "https://api.spacexdata.com/v3/launches/past";
+    private static final String SPACEX_URL_PAST = "https://api.spacexdata.com/v3/launches/past?order=desc";
     private static final int FLIGHT_LOADER_ID = 1;
     private FlightAdapter flightAdapter;
     private TextView noFlightsTextView;
