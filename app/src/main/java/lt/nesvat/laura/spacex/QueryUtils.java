@@ -127,13 +127,13 @@ class QueryUtils {
                 JSONObject links = currentObject.getJSONObject("links");
                 String videoUrl = links.getString("video_link");
 
-                //Todo: When there is launch success is unknown do not assign to it false value (valid for upcoming flights, and not used)
-                boolean launchSuccess;
+                Boolean launchSuccess;
                 if (currentObject.isNull("launch_success")){
-                    launchSuccess = false;
+                    launchSuccess = null;
                 } else {
                     launchSuccess = currentObject.getBoolean("launch_success");
                 }
+
                 boolean isUpcoming = currentObject.getBoolean("upcoming");
 
                 flights.add(new Flight(flightDateUnix, flightNumber, rocketName, launchSiteName, launchSuccess, reuse, flightDetails, videoUrl, isUpcoming));

@@ -15,10 +15,10 @@ class Flight implements Serializable{
     private Boolean reuse;
     private String flightDetails;
     private String videoUrl;
-    private boolean launchSuccess;
+    private Boolean launchSuccess;
     private boolean isUpcoming;
 
-    Flight(int flightDateUnix, int flightNumber, String rocketName, String launchSiteName, boolean launchSuccess, Boolean reuse, String flightDetails, String videoUrl, boolean isUpcoming) {
+    Flight(int flightDateUnix, int flightNumber, String rocketName, String launchSiteName, Boolean launchSuccess, Boolean reuse, String flightDetails, String videoUrl, boolean isUpcoming) {
         this.flightDateUnix = flightDateUnix;
         this.flightNumber = flightNumber;
         this.rocketName = rocketName;
@@ -47,7 +47,9 @@ class Flight implements Serializable{
     }
 
     String isLaunchSuccess() {
-        if(launchSuccess) {
+        if(launchSuccess == null) {
+          return "No Launch information";
+        } else if(launchSuccess) {
             return "Launch Success!";
         } else {
             return "Launch Failed";
@@ -55,7 +57,7 @@ class Flight implements Serializable{
 
     }
 
-    boolean getLaunchSuccessState(){
+    Boolean getLaunchSuccessState(){
         return launchSuccess;
     }
 

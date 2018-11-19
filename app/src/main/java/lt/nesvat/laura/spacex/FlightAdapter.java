@@ -41,7 +41,7 @@ public class FlightAdapter extends ArrayAdapter<Flight> {
             } else {
                 launchSuccessTextView.setText(currentFlight.isLaunchSuccess());
                 launchSuccessTextView.setVisibility(View.VISIBLE);
-                if (currentFlight.getLaunchSuccessState()) {
+                if (currentFlight.getLaunchSuccessState() != null && currentFlight.getLaunchSuccessState()) {
                     launchSuccessTextView.setTextColor(ContextCompat.getColor(this.getContext(), R.color.launchSuccess));
                 } else {
                     launchSuccessTextView.setTextColor(ContextCompat.getColor(this.getContext(), R.color.launchFail));
