@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
             }
         });
 
-        ImageView catImage = findViewById(R.id.image_vega);
+        ImageView catImage = findViewById(R.id.image_rocket);
         catImage.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
 
                     //Create media player that will be used to play sound when clicking on picture
-                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.cat_meow);
+                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.rocket);
                     mediaPlayer.start();
                     //follow when the file finished to play and release media player
                     mediaPlayer.setOnCompletionListener(completionListener);

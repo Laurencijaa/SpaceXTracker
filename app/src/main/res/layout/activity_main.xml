@@ -8,14 +8,14 @@
     tools:context=".MainActivity">
 
     <ImageView
-        android:id="@+id/image_vega"
+        android:id="@+id/image_rocket"
         android:layout_width="72dp"
-        android:layout_height="48dp"
+        android:layout_height="72dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="@dimen/main_margin"
         android:scaleType="centerCrop"
-        android:src="@drawable/vegute" />
+        android:src="@drawable/rocket" />
 
     <Button
         android:id="@+id/button_history"
@@ -32,7 +32,7 @@
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/image_vega"
+        android:layout_below="@id/image_rocket"
         android:layout_marginTop="16dp"
         android:orientation="vertical" />
 
