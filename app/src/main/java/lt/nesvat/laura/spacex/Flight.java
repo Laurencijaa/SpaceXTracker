@@ -12,13 +12,13 @@ class Flight implements Serializable{
     private int flightNumber;
     private String rocketName;
     private String launchSiteName;
-    private boolean reuse;
+    private Boolean reuse;
     private String flightDetails;
     private String videoUrl;
     private boolean launchSuccess;
     private boolean isUpcoming;
 
-    Flight(int flightDateUnix, int flightNumber, String rocketName, String launchSiteName, boolean launchSuccess, boolean reuse, String flightDetails, String videoUrl, boolean isUpcoming) {
+    Flight(int flightDateUnix, int flightNumber, String rocketName, String launchSiteName, boolean launchSuccess, Boolean reuse, String flightDetails, String videoUrl, boolean isUpcoming) {
         this.flightDateUnix = flightDateUnix;
         this.flightNumber = flightNumber;
         this.rocketName = rocketName;
@@ -60,10 +60,12 @@ class Flight implements Serializable{
     }
 
     String isReuse() {
-        if(reuse){
-            return "Reuse YES";
+        if(reuse == null) {
+            return "Reuse: NO information";
+        } else if (reuse){
+            return "Reuse: YES";
         } else {
-            return "Reuse NO";
+            return "Reuse: NO";
         }
     }
 

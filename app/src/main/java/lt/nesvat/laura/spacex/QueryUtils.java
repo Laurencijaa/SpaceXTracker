@@ -105,16 +105,21 @@ class QueryUtils {
 
                 JSONObject fistStage = rocket.getJSONObject("first_stage");
                 JSONArray cores = fistStage.getJSONArray("cores");
-                boolean reuse = false;
+                Boolean reuse;
                 ArrayList<String> reusedCores = new ArrayList<>();
                 for(int j=0; j<cores.length(); j++){
                     JSONObject currentCore = cores.getJSONObject(j);
                     String reusedCore = currentCore.getString("reused");
                     reusedCores.add(reusedCore);
                 }
-                //Todo: When reused is null, write message that there is "no information" instead of saying "false"
+                //If at least one core was reused, the show to user that reused was true
                 if(reusedCores.contains("true")) {
                     reuse = true;
+                    //if there is no information on reuse, then null value should be returned
+                } else if( !(reusedCores.contains("true")) && !(reusedCores.contains("false")) ){
+                    reuse = null;
+                } else {
+                    reuse = false;
                 }
 
                 String flightDetails = currentObject.getString("details");
