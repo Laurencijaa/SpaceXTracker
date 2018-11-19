@@ -42,7 +42,7 @@ public class DetailsActivity extends AppCompatActivity {
         reuse.setText(flight.isReuse());
 
         TextView details = findViewById(R.id.details_text_view);
-        if(flight.isUpcoming()) {
+        if(flight.isUpcoming() || flight.getFlightDetails().equals("null")) {
             details.setVisibility(View.GONE);
         }else {
             details.setText(flight.getFlightDetails());
@@ -71,4 +71,3 @@ public class DetailsActivity extends AppCompatActivity {
 }
 
 //todo: Add back arrow
-//Todo: Details returns null if empty, fix that

@@ -105,5 +105,3 @@ public class History extends AppCompatActivity implements LoaderManager.LoaderCa
         flightAdapter.clear();
     }
 }
-
-//Todo: Sort history launches from latest to earliest
